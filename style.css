@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    25deg,
+    rgb(240, 14, 14),
+    rgb(0, 110, 255),
+    rgb(0, 255, 0)
+  );
+}
+.header {
+  background-color: blue;
+  height: 30px;
+  width: 100%;
+}
+
+.left {
+  height: 400px;
+  width: 80px;
+  border: 2px solid blue;
+  background: linear-gradient(
+    45deg,
+    rgb(33, 240, 14),
+    rgb(238, 255, 0),
+    rgb(173, 8, 160)
+  );
+}
+
+.right {
+  height: 400px;
+  width: 80px;
+  top: 0;
+  border: 2px solid blue;
+  position: relative;
+  float: right;
+  background: linear-gradient(
+    45deg,
+    rgb(173, 8, 160),
+    rgb(238, 255, 0),
+    rgb(33, 240, 14)
+  );
+}
+
+/*PROBA CAROUZZZZEL*/
+.proba_carousel {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  background-color: pink;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.proba_carousel img {
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(100%);
+}
+.proba_carousel img.on {
+  transform: translateY(0) rotateX(60deg);
+  transition: transform 3s;
+}
+.proba_carousel img.offscreen-left {
+  transform: translateY(-100%);
+  transform: rotateX(-120deg);
+  transition: transform 3s;
+}
+
+/*_____M_A_I_N_F_R_A_M_E_____*/
+
+.frame {
+  background: linear-gradient(
+    25deg,
+    rgb(217, 240, 14),
+    rgb(16, 180, 245),
+    rgb(255, 0, 0)
+  );
+  height: 520px;
+  width: 840px;
+  border: 1px solid pink;
+  position: relative;
+  perspective: 1000px;
+  margin: 40px 0;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.slot {
+  width: 30%;
+  height: 100%;
+  /* position: absolute; */
+  transform: translateZ(-150px);
+  transform-style: preserve-3d;
+  transition: transform 3s;
+  /* perspective-origin: 20%; */
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+/* .a {} */
+
+.slot__img {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  border: 2px solid silver;
+  top: 40%;
+  left: 10px;
+  transition: transform 2s;
+
+  /* overflow: hidden; */
+}
+
+/*_____ AKO ISPOD MAKNEM Z, LUDNICA*/
+
+/* .start {
+  transform: rotateX(0deg), translateZ(150px);
+}
+
+.one {
+  transform: rotateX(60deg) translateZ(150px);
+}
+.two {
+  transform: rotateX(120deg) translateZ(150px);
+}
+.three {
+  transform: rotateX(180deg) translateZ(150px);
+}
+.four {
+  transform: rotateX(240deg) translateZ(150px);
+}
+.five {
+  transform: rotateX(300deg) translateZ(150px);
+} */
+
+/*____________*/
+
+.slot__img:nth-child(1) {
+  transform: rotateX(0deg), translateZ(200px);
+}
+
+.slot__img:nth-child(2) {
+  transform: rotateX(60deg) translateZ(200px);
+}
+.slot__img:nth-child(3) {
+  transform: rotateX(120deg) translateZ(200px);
+}
+.slot__img:nth-child(4) {
+  transform: rotateX(180deg) translateZ(200px);
+}
+.slot__img:nth-child(5) {
+  transform: rotateX(240deg) translateZ(200px);
+}
+.slot__img:nth-child(6) {
+  transform: rotateX(300deg) translateZ(200px);
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-fill-mode: none;
+}
+
+.grow {
+  transform: scale(2);
+  transform: translateZ(50%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0px) rotateX(720deg);
+  }
+
+  100% {
+    transform: rotateX(1440deg);
+  }
+}
