@@ -1,5 +1,5 @@
 console.log("ovonijetvojkompa-juter");
-//console.log($, "ourajt");
+console.log($, "ourajt");
 
 //PRoBA RANDOM SLIKA NA UPLOAD
 var learyArray = new Array(
@@ -37,27 +37,37 @@ function randomImg() {
   var randomNum = Math.floor(Math.random() * learyArray.length);
   document.querySelectorAll(".slot__img img").src = learyArray[randomNum];
 }
-var slot = document.getElementsByClassName("slot")[0];
+//var slot = document.getElementsByClassName("slot")[0];
+// PROBA DRUGA VARIAJNATA
 
-slot.addEventListener("mousedown", function () {
-  event.stopPropagation();
-  slot.classList.add("rotate");
-  document.querySelector("img").classList.add("grow");
-  function ranDom() {
-    document.querySelector("img").src = learyArray[randomNum];
-  }
-  setTimeout(ranDom, 1000);
-  /////////////////////PROBA RANDOM ZA SVE
-  function randomAll() {
-    var imgz = document.querySelectorAll("img");
-    for (i = 0; i <= imgz.length; i++) {
-      /////ako je i=randomNum, nema fora efekta, ali baca random
-      imgz[i].src = learyArray[randomNum];
+var slotArray = document.querySelectorAll(".slot");
+
+slotArray.forEach(function (slot) {
+  slot.addEventListener("mousedown", function () {
+    // event.stopPropagation();
+    slot.classList.add("rotate");
+    document.querySelector("img").classList.add("grow");
+    function ranDom() {
+      document.querySelector("img").src = learyArray[randomNum];
     }
-  }
-  setTimeout(randomAll, 1000);
+    setTimeout(ranDom, 1000);
+
+    /////////////////////PROBA RANDOM ZA SVE
+    var imgz = document.querySelectorAll("img");
+    for (i = randomNum; i <= imgz.length; i++) {
+      /////ako je i=randomNum, nema fora efekta, ali baca random
+      imgz[randomNum].src = learyArray[randomNum];
+    }
+    setTimeout(randomAll, 1000);
+  });
+  //PROBA RANDOM FOR EACH
+  // var imgz = document.querySelectorAll("img");
   console.log("clix");
 });
+//IZ RANDOMALL; PROBAVAM SA FOR EACH
+// imgz.forEach(function randomAll(img) {
+//   document.querySelector("img").src = learyArray[randomNum];
+// });
 
 function otherImg() {
   for (i = 0; i <= learyArray.length; i++) {

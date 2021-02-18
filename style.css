@@ -8,11 +8,18 @@ body {
     rgb(0, 110, 255),
     rgb(0, 255, 0)
   );
+  background-image: url("bg1.png");
 }
+
 .header {
   background-color: blue;
   height: 30px;
   width: 100%;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .left {
@@ -40,6 +47,10 @@ body {
     rgb(238, 255, 0),
     rgb(33, 240, 14)
   );
+}
+.footer {
+  height: 20px;
+  width: 100%;
 }
 
 /*PROBA CAROUZZZZEL*/
@@ -78,13 +89,14 @@ body {
     rgb(16, 180, 245),
     rgb(255, 0, 0)
   );
+
   height: 520px;
-  width: 840px;
+  width: 70%;
   border: 1px solid pink;
   position: relative;
-  perspective: 1000px;
-  margin: 40px 0;
-  margin: 80px auto;
+  perspective: 1000px; /*bilo 1000*/
+  /* margin: 40px 0;
+  margin: 80px auto; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -92,14 +104,13 @@ body {
   width: 30%;
   height: 100%;
   /* position: absolute; */
-  transform: translateZ(-150px);
+  transform: translateZ(-150px); /*probao maknut*/
   transform-style: preserve-3d;
   transition: transform 3s;
   /* perspective-origin: 20%; */
   flex-direction: row;
   justify-content: space-evenly;
 }
-/* .a {} */
 
 .slot__img {
   position: absolute;
@@ -114,26 +125,6 @@ body {
 }
 
 /*_____ AKO ISPOD MAKNEM Z, LUDNICA*/
-
-/* .start {
-  transform: rotateX(0deg), translateZ(150px);
-}
-
-.one {
-  transform: rotateX(60deg) translateZ(150px);
-}
-.two {
-  transform: rotateX(120deg) translateZ(150px);
-}
-.three {
-  transform: rotateX(180deg) translateZ(150px);
-}
-.four {
-  transform: rotateX(240deg) translateZ(150px);
-}
-.five {
-  transform: rotateX(300deg) translateZ(150px);
-} */
 
 /*____________*/
 
@@ -165,7 +156,7 @@ body {
 
 .grow {
   transform: scale(2);
-  transform: translateZ(50%);
+  transform: translateZ(25%);
 }
 
 @keyframes rotate {
