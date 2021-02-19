@@ -22,56 +22,89 @@ var learyArray = new Array(
   "leary17.bmp",
   "leary18.bmp",
   "leary19.bmp",
-  "leary20.bmp",
+  "leary20vece.bmp",
   "leary21.bmp",
-  "leary22.bmp",
   "leary23.bmp",
   "leary24.bmp",
   "leary25.bmp"
 );
 console.log(learyArray);
-window.onload = randomImg;
 
-var randomNum = Math.floor(Math.random() * learyArray.length);
-function randomImg() {
-  var randomNum = Math.floor(Math.random() * learyArray.length);
-  document.querySelectorAll(".slot__img img").src = learyArray[randomNum];
-}
-//var slot = document.getElementsByClassName("slot")[0];
-// PROBA DRUGA VARIAJNATA
+// funkcija za random assign na startu
 
-var slotArray = document.querySelectorAll(".slot");
-
-slotArray.forEach(function (slot) {
-  slot.addEventListener("mousedown", function () {
-    // event.stopPropagation();
-    slot.classList.add("rotate");
-    document.querySelector("img").classList.add("grow");
-    function ranDom() {
-      document.querySelector("img").src = learyArray[randomNum];
-    }
-    setTimeout(ranDom, 1000);
-
-    /////////////////////PROBA RANDOM ZA SVE
-    var imgz = document.querySelectorAll("img");
-    for (i = randomNum; i <= imgz.length; i++) {
-      /////ako je i=randomNum, nema fora efekta, ali baca random
-      imgz[randomNum].src = learyArray[randomNum];
-    }
-    setTimeout(randomAll, 1000);
-  });
-  //PROBA RANDOM FOR EACH
-  // var imgz = document.querySelectorAll("img");
-  console.log("clix");
-});
-//IZ RANDOMALL; PROBAVAM SA FOR EACH
-// imgz.forEach(function randomAll(img) {
-//   document.querySelector("img").src = learyArray[randomNum];
-// });
-
-function otherImg() {
-  for (i = 0; i <= learyArray.length; i++) {
-    document.getElementsByClassName("slot__img")[i].src = learyArray[randomNum];
+window.addEventListener("load", function () {
+  console.log("loaded");
+  var size = learyArray.length;
+  console.log("size", size);
+  //var imgAll = document.querySelectorAll(".slot__img");
+  var imgAll = document.getElementsByTagName("img");
+  var imgz = imgAll.length;
+  console.log("imgz", imgz);
+  for (i = 0; i <= imgAll.length; i++) {
+    var x = Math.floor(size * Math.random());
+    //console.log("X", x);
+    imgAll[i].src = learyArray[x];
   }
-  return otherImg();
+});
+
+// get attribute je ključ za usporedbu slika i za slot
+//.getAttribute(src)
+// var proba = document.getElementById("proba");
+// var probaDva = proba.getAttribute("src");
+// console.log("proba", probaDva);
+// var probaTri = document.getElementById("proba3");
+// var probaTris = probaTri.getAttribute("src");
+// function compare() {
+//   if (probaDva === probaDva) {
+//     console.log("RAMBO");
+//   } else {
+//     console.log("paa nijee");
+//   }
+// }
+//compare(); ///radi, može preko src get attribute
+
+//var slotArray = document.querySelectorAll(".slot");
+
+var frame = document.getElementById("frame");
+var slots = frame.getElementsByClassName("slot");
+
+// var front1 = getElementById("front1");
+// var front11 = front1.getAttribute("src");
+// console.log("front11", front11);
+// var front2 = getElementById("front2").getAttribute("src");
+// var front3 = getElementById("front3").getAttribute("src");
+// var frontsArray = new Array(front1, front2, front3);
+
+//FUNKCIJA SLOTCHECK RADI
+
+// function slotCheck() {
+//   console.log("oujea");
+//   if (front1 === front2) {
+//     console.log("brrr");
+//   } else {
+//     console.log("rambo");
+//   }
+// }
+
+function game(event) {
+  if (event.keyCode === 32) {
+    slots[0].classList.add("rotate");
+    slots[1].classList.add("rotate");
+    slots[2].classList.add("rotate");
+    //randomImg();
+    slotCheck();
+  }
 }
+
+// function randomImg() {
+//   var size = learyArray.length;
+//   console.log("size", size);
+//   for (i = 0; i <= frontsArray.length; i++) {
+//     var x = Math.floor(size * Math.random());
+//     //console.log("X", x);
+//     frontsArray[i].src = learyArray[x];
+//   }
+//   setTimeout(randomImg, 1000);
+// }
+
+document.addEventListener("keydown", game);

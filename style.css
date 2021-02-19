@@ -82,7 +82,7 @@ body {
 
 /*_____M_A_I_N_F_R_A_M_E_____*/
 
-.frame {
+#frame {
   background: linear-gradient(
     25deg,
     rgb(217, 240, 14),
@@ -130,6 +130,7 @@ body {
 
 .slot__img:nth-child(1) {
   transform: rotateX(0deg), translateZ(200px);
+  visibility: hidden;
 }
 
 .slot__img:nth-child(2) {
@@ -147,6 +148,9 @@ body {
 .slot__img:nth-child(6) {
   transform: rotateX(300deg) translateZ(200px);
 }
+.slot__img:nth-child(7) {
+  transform: rotateX(360deg) translateZ(200px);
+}
 
 .rotate {
   animation-name: rotate;
@@ -154,10 +158,10 @@ body {
   animation-fill-mode: none;
 }
 
-.grow {
+/* .grow {
   transform: scale(2);
   transform: translateZ(25%);
-}
+} */
 
 @keyframes rotate {
   0% {
