@@ -68,43 +68,41 @@ window.addEventListener("load", function () {
 var frame = document.getElementById("frame");
 var slots = frame.getElementsByClassName("slot");
 
-// var front1 = getElementById("front1");
-// var front11 = front1.getAttribute("src");
-// console.log("front11", front11);
-// var front2 = getElementById("front2").getAttribute("src");
-// var front3 = getElementById("front3").getAttribute("src");
-// var frontsArray = new Array(front1, front2, front3);
-
 //FUNKCIJA SLOTCHECK RADI
 
-// function slotCheck() {
-//   console.log("oujea");
-//   if (front1 === front2) {
-//     console.log("brrr");
-//   } else {
-//     console.log("rambo");
-//   }
-// }
+function slotCheck() {
+  console.log("oujea");
+  if (front1 === front2) {
+    console.log("brrr");
+  } else {
+    console.log("rambo");
+  }
+}
+
+function randomImg() {
+  var size = learyArray.length;
+  console.log("opetsize", size);
+  var frontOne = document.getElementById("front1");
+  console.log("front", frontOne);
+  var frontTwo = document.getElementById("front2");
+  var frontThree = document.getElementById("front3");
+  var frontsArray = new Array(frontOne, frontTwo, frontThree);
+  for (i = 0; i <= frontsArray.length; i++) {
+    var x = Math.floor(size * Math.random());
+    //console.log("X", x);
+    frontsArray[i].src = learyArray[x];
+  }
+  setTimeout(randomImg, 1000);
+}
 
 function game(event) {
   if (event.keyCode === 32) {
     slots[0].classList.add("rotate");
     slots[1].classList.add("rotate");
     slots[2].classList.add("rotate");
-    //randomImg();
+    randomImg();
     slotCheck();
   }
 }
-
-// function randomImg() {
-//   var size = learyArray.length;
-//   console.log("size", size);
-//   for (i = 0; i <= frontsArray.length; i++) {
-//     var x = Math.floor(size * Math.random());
-//     //console.log("X", x);
-//     frontsArray[i].src = learyArray[x];
-//   }
-//   setTimeout(randomImg, 1000);
-// }
 
 document.addEventListener("keydown", game);
