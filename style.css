@@ -2,52 +2,110 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     25deg,
     rgb(240, 14, 14),
     rgb(0, 110, 255),
     rgb(0, 255, 0)
-  );
-  background-image: url("bg1.png");
+  ); */
+
+  background-color: blue;
 }
 
 .header {
   background-color: blue;
-  height: 30px;
+  height: 60px;
   width: 100%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  display: flex;
+  justify-content: space-between;
+}
+#header-left {
+  height: 100%;
+  width: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-image: url("bg1.png");
+}
+#header-right {
+  height: 100%;
+  width: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-image: url("bg1.png");
+}
+#welcome-text {
+  font-size: 40px;
+  color: white;
+}
+
+#canvas {
+  /* background: linear-gradient(
+    45deg,
+    rgb(0, 0, 0),
+    rgb(48, 48, 46),
+    rgb(143, 105, 105)
+  ); */
+  background: black;
+  border: 2px solid rgb(58, 255, 58);
 }
 .main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  z-index: 10;
 }
 
-.left {
+#left {
   height: 80px;
   width: 80px;
   border: 2px solid blue;
   border-radius: 50%;
   background: linear-gradient(
     45deg,
-    rgb(33, 240, 14),
-    rgb(238, 255, 0),
-    rgb(173, 8, 160)
+    rgb(0, 0, 0),
+    rgb(94, 94, 88),
+    rgb(51, 50, 50)
   );
+}
+.win {
+  animation-name: win;
+  animation-duration: 4s;
+  animation-fill-mode: none;
+  background: linear-gradient(
+    45deg,
+    rgb(240, 14, 229),
+    rgb(238, 255, 0),
+    rgb(175, 18, 162)
+  );
+}
+@keyframes win {
+  0% {
+    transform: translateY(20%);
+  }
+
+  50% {
+    transform: translateY(150%) rotateX(720deg);
+  }
+
+  100% {
+    transform: translateY(300%);
+  }
 }
 
 .right {
-  height: 80px;
-  width: 80px;
+  height: 400px;
+  width: 100px;
   top: 0;
   border: 2px solid blue;
-  border-radius: 50%;
+
   position: relative;
   float: right;
   background: linear-gradient(
     45deg,
-    rgb(173, 8, 160),
-    rgb(238, 255, 0),
-    rgb(33, 240, 14)
+    rgb(87, 87, 87),
+    rgb(49, 49, 49),
+    rgb(245, 237, 237)
   );
 }
 .footer {
@@ -58,15 +116,15 @@ body {
 /*_____M_A_I_N_F_R_A_M_E_____*/
 
 #frame {
-  background: linear-gradient(
+  /* background: linear-gradient(
     25deg,
     rgb(217, 240, 14),
     rgb(16, 180, 245),
     rgb(255, 0, 0)
-  );
-
-  height: 520px;
-  width: 80%;
+  ); */
+  background-color: black;
+  height: 600px;
+  width: 1000px;
   border: 1px solid pink;
   position: relative;
   perspective: 1500px; /*bilo 1000*/
@@ -90,7 +148,7 @@ body {
   position: absolute;
   height: 150px;
   width: 200px;
-  border: 2px solid silver;
+  border: 2px solid rgb(58, 255, 58);
   top: 30%;
   left: 15%;
 }
@@ -123,7 +181,7 @@ body {
 
 .rotate {
   animation-name: rotate;
-  animation-duration: 4s;
+  animation-duration: 6s;
   animation-fill-mode: none;
 }
 
