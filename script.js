@@ -225,20 +225,128 @@ function canVas() {
   ctx.lineTo(1000, 0);
   ctx.lineTo(800, 150);
   ctx.stroke();
+
+  //DEKORTIVNE
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(75, 205, 1, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.strokeStyle = "wheat";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(365, 255, 0.8, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(85, 355, 0.7, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(635, 175, 0.3, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(605, 355, 0.5, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(105, 405, 0.5, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(905, 355, 0.5, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(875, 395, 0.7, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(920, 285, 0.3, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(1015, 255, 0.3, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(360, 365, 0.2, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(425, 265, 0.8, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(40, 405, 0.2, 0, 2 * Math.PI);
+  //arc(x,y, radius, startingAngle, endAngle)
+  ctx.stroke();
+  ctx.fillStyle = "white";
+  ctx.fill();
 }
 canVas();
 
 var canvasImg = canvas.toDataURL();
 console.log("cansvas", canvasImg);
-
-//Trebalo za canvas
-
-// document.addEventListener("click", function (event) {
-//   console.log("x: ", event.pageX);
-//   console.log("y: ", event.pageY);
-//   canvas1.style.left = event.pageX + "px";
-//   canvas1.style.top = event.pageY + "px";
-// });
 
 // funkcija za random assign na startu
 
@@ -257,24 +365,6 @@ window.addEventListener("load", function () {
     imgAll[i].src = learyArray[x];
   }
 });
-
-// get attribute je ključ za usporedbu slika i za slot
-//.getAttribute(src)
-// var proba = document.getElementById("proba");
-// var probaDva = proba.getAttribute("src");
-// console.log("proba", probaDva);
-// var probaTri = document.getElementById("proba3");
-// var probaTris = probaTri.getAttribute("src");
-// function compare() {
-//   if (probaDva === probaDva) {
-//     console.log("RAMBO");
-//   } else {
-//     console.log("paa nijee");
-//   }
-// }
-//compare(); ///radi, može preko src get attribute
-
-//var slotArray = document.querySelectorAll(".slot");
 
 //FUNKCIJA SLOTCHECK RADI
 
@@ -314,7 +404,7 @@ function game(event) {
   var frame = document.getElementById("frame");
   var canvas = document.getElementById("canvas");
   var canvasImg = canvas.toDataURL();
-  frame.style.backgroundImage = "url(" + canvasImg + ")";
+  //frame.style.backgroundImage = "url(" + canvasImg + ")";
   let slots = frame.getElementsByClassName("slot");
   if ((pressed = true || event.keyCode === 32)) {
     slots[0].classList.toggle("rotate"); //proba toggle umjesto add
@@ -333,10 +423,6 @@ document.addEventListener("keydown", game);
 //slotCheck();
 
 function slotCheck() {
-  // if (pressed) {
-  //   return null;
-  // }
-  // pressed = true; //dodao zadnje sve
   var left = document.getElementById("left");
   var checkOne = document.getElementById("front1").getAttribute("src");
   console.log("checksrc", checkOne);
@@ -348,7 +434,7 @@ function slotCheck() {
     checkTwo === checkThree ||
     (checkOne === checkTwo) === checkThree
   ) {
-    left.classList.add("win");
+    // left.classList.toggle("win");
     console.log("win");
     alert("ostavi se kompjutera");
     //return null; //dodao zadnje
@@ -357,4 +443,3 @@ function slotCheck() {
   }
 }
 
-//probati state sa var pressed = false unutar game; if pressed = true
